@@ -10,9 +10,9 @@
     "author": "",
     "license": "ISC",
     "type": "module",
-    "dependencies": {},
     "devDependencies": {
         "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^9.0.0",
         "gulp-sass": "^5.1.0",
         "sass": "^1.69.5"
     }
