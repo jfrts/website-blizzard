@@ -19,5 +19,10 @@ function sassCompiler() {
         .pipe(gulp.dest(CSS_OUTPUT_FILE_PATH));
 }
 
-gulp.task('default', sassCompiler);
+gulp.task("default", sassCompiler);
 
+function watch() {
+    gulp.watch(SCSS_FILES_PATH, sassCompiler);
+}
+
+gulp.task("default", watch);
