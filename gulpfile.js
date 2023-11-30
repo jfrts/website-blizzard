@@ -3,6 +3,7 @@ import gulp from "gulp";
 import autoPrefixer from "gulp-autoprefixer";
 import concat from "gulp-concat";
 import sass from "gulp-sass";
+import babel from "gulp-babel";
 import { createRequire } from "module";
 
 const WEBSITE_BASE_DIR = "./src";
@@ -26,6 +27,9 @@ gulp.task("sass", sassCompiler);
 function scripts() {
     return gulp.src('./src/assets/js/scripts/*.js')
         .pipe(concat('all.js'))
+        .pipe(babel({
+            presets: ["@babel/env"]
+        }))
         .pipe(gulp.dest('./src/assets/js/scripts/dist/'));
 }
 gulp.task('scripts', scripts);
