@@ -26,19 +26,44 @@ function sassCompiler() {
 gulp.task("sass", sassCompiler);
 
 function scripts() {
-    return gulp.src('./src/assets/js/scripts/*.js')
+    return gulp.src(`${WEBSITE_BASE_DIR}/assets/js/scripts/*.js`)
         .pipe(concat('all.js'))
         .pipe(babel({
             presets: ["@babel/env"]
         }))
         .pipe(gulpUglify())
-        .pipe(gulp.dest('./src/assets/js/dist/'));
+        .pipe(gulp.dest(`${WEBSITE_BASE_DIR}/assets/js/dist/`));
 }
 gulp.task('scripts', scripts);
+
+function plugins() {
+    return gulp
+        .src([
+            `${WEBSITE_BASE_DIR}/assets/js/lib/aos.min.js`,
+            `${WEBSITE_BASE_DIR}/assets/js/lib/swiper.min.js`
+        ])
+        .pipe(concat("plugins.js"))
+        .pipe(gulp.dest(`${WEBSITE_BASE_DIR}/assets/js`))
+        .pipe(browserSync.stream());
+}
+
+gulp.task("plugins", plugins);
+
+function pluginsStyles() {
+    return gulp
+        .src(`${WEBSITE_BASE_DIR}/assets/css/lib/*.css`)
+        .pipe(concat("plugins.css"))
+        .pipe(gulp.dest(`${WEBSITE_BASE_DIR}/assets/css`))
+        .pipe(browserSync.stream());
+}
+
+gulp.task("pluginsStyles", pluginsStyles);
 
 function watch() {
     gulp.watch(`${WEBSITE_BASE_DIR}/scss/*.scss`, sassCompiler);
     gulp.watch(`${WEBSITE_BASE_DIR}/*.html`).on("change", browserSyncInstance.reload);
+    gulp.watch(`${WEBSITE_BASE_DIR}/assets/js/lib/*.js`, plugins);
+    gulp.watch(`${WEBSITE_BASE_DIR}/assets/css/lib/*.css`, pluginsStyles);
     gulp.watch(`${WEBSITE_BASE_DIR}/assets/js/scripts/*.js`, scripts);
 }
 gulp.task("watch", watch);
@@ -53,4 +78,11 @@ function browser() {
 
 gulp.task("browser-sync", browser);
 
-gulp.task("default", gulp.parallel("watch", "browser-sync", "sass", "scripts"));
+gulp.task("default", gulp.parallel(
+    "watch",
+    "browser-sync",
+    "sass",
+    "scripts",
+    "plugins",
+    "pluginsStyles"
+));
