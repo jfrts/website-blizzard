@@ -1,0 +1,54 @@
+// Grid
+$grid-size-desktop: 130rem;
+
+// Fonts
+$font-base: 'Poppins', sans-serif;
+$font-title: 'Poppins', sans-serif;
+
+// Primary Colors
+$primary-darkest: #002550;
+$primary-dark: #025A9A;
+$primary-default: #00AEFF;
+$primary-light: #61CDFF;
+
+// Neutral Colors
+$neutral-100: #020203;
+$neutral-200: #0B0D12;
+$neutral-300: #15171B;
+$neutral-400: #1F2025;
+$neutral-500: #26272E;
+$neutral-600: #2D2F38;
+$neutral-700: #363842;
+
+// Text
+* {
+    font-family: $font-base;
+}
+
+// Titles
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-title;
+    letter-spacing: -0.04rem;
+    line-height: 120%;
+
+    &.bold {
+        font-weight: 700;
+    }
+
+    &.semi-bold {
+        font-weight: 600;
+    }
+}
+
+body {
+    background-color: $neutral-100;
+    color: #FFFFFF;
+}
+
+a {
+    color: #FFFFFF;
+}

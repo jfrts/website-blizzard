@@ -1,0 +1,72 @@
+.btn {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 0.4rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.4rem;
+    font-weight: 600;
+    gap: 0.8rem;
+    line-height: 4.1rem;
+    padding: 0 1.6rem;
+    transition: all 120ms ease-in;
+
+    &-primary {
+        background-color: $primary-default;
+        border-color: $primary-default;
+
+        &:hover {
+            background-color: $primary-light;
+        }
+    }
+
+    &-outline {
+        border-color: #FFFFFF;
+
+        &:hover {
+            background-color: #FFFFFF;
+            color: $neutral-200;
+        }
+    }
+}
+
+.game-card {
+    display: block;
+    max-width: 28rem;
+    width: 100%;
+    
+    &:hover {
+        .cover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+    
+    .cover {
+        border-radius: 0.4rem;
+        height: 38.3rem;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 2.4rem;
+
+        img {
+            transition: all 400ms ease-in;
+        }
+    }
+    
+    h3 {
+        color: #E5E5E5;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        margin-bottom: 0.4rem;
+    }
+
+    span {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        color: transparentize($color: #E5E5E5, $amount: 0.3);
+    }
+}

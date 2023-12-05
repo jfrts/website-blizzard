@@ -1,0 +1,37 @@
+header {
+    border-bottom: 1.5px solid transparentize($color: #FFFFFF, $amount: 0.9);
+    height: 9.6rem;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-container {
+            display: flex;
+            align-items: center;
+            gap: 11.23rem;
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 3.4rem;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.4rem;
+                }
+            }
+        }
+
+        .right-container {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
+    }
+}
