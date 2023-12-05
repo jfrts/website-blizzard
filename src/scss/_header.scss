@@ -2,8 +2,11 @@ header {
     border-bottom: 1.5px solid transparentize($color: #FFFFFF, $amount: 0.9);
     height: 9.6rem;
     display: flex;
-    position: relative;
+    left: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
+    z-index: 999;
 
     .container {
         display: flex;

@@ -1,0 +1,131 @@
+.s-hero {
+    .main-slide {
+        height: 73.6rem;
+        width: 100%;
+
+        .swiper-wrapper {
+
+            .swiper-slide {
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                padding-top: 20.7rem;
+
+                .container {
+                    align-items: flex-start;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .left-content {
+                        margin-left: 19.3rem;
+                        max-width: 56.2rem;
+                        width: 100%;
+
+                        h2 {
+                            font-size: 6.4rem;
+                            font-weight: 700;
+                            line-height: 110.2%;
+                            margin-bottom: 1.6rem;
+                        }
+
+                        p {
+                            font-size: 1.8rem;
+                            letter-spacing: -0.005rem;
+                            line-height: 2.7rem;
+                            margin-bottom: 3.2rem;
+                        }
+
+                        .btn {
+                            padding: 0 3.95rem;
+                            line-height: 5.2rem;
+                        }
+                    }
+
+                    .right-content {
+                        margin-top: -3.4rem;
+                        max-width: 29.2rem;
+                        width: 100%;
+
+                        .game-logo {
+                            display: grid;
+                            height: 18rem;
+                            margin-bottom: 8.6rem;
+                            overflow: hidden;
+                            place-content: center;
+                            width: 28rem;
+                        }
+
+                        .game-video {
+                            overflow: hidden;
+                            width: 28rem;
+
+                            span {
+                                display: block;
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                                line-height: 1.9rem;
+                                margin-bottom: 1.6rem;
+                                text-align: right;
+                                text-transform: uppercase;
+                            }
+
+                            button {
+                                height: 17.3rem;
+                                overflow: hidden;
+                                position: relative;
+                                width: 100%;
+
+                                .thumb {
+                                    height: 100%;
+                                    left: 0;
+                                    object-fit: cover;
+                                    position: absolute;
+                                    top: 0;
+                                    width: 100%;
+                                }
+
+                                .thumb.default {
+                                    opacity: 1;
+                                    transition: all 500ms ease;
+                                    z-index: 998;
+
+                                    &:hover {
+                                        opacity: 0;
+                                    }
+                                }
+
+                                img {
+                                    border-radius: 0.4rem;
+                                }
+
+                                .icon {
+                                    background-color: $neutral-100;
+                                    border-radius: 999rem;
+                                    display: grid;
+                                    height: 4rem;
+                                    margin: 0 auto;
+                                    place-content: center;
+                                    position: relative;
+                                    width: 4rem;
+                                    z-index: 999;
+
+                                    img {
+                                        margin-left: 0.2rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            #slide-diablo {
+                background-image: url("../imgs/banner-slide-01.jpg");
+            }
+
+            #slide-hearthstone {
+                background-image: url("../imgs/banner-slide-02.jpg");
+            }
+        }
+    }
+}

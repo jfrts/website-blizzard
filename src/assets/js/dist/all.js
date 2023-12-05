@@ -1,1 +1,1 @@
-"use strict";console.log("buttonsjs"),console.log("modaljs");
+"use strict";var slide_hero=new Swiper("#main-slide",{effect:"fade"});
