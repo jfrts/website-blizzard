@@ -1,4 +1,27 @@
 .s-hero {
+    position: relative;
+
+    .thumb-slide {
+        height: 32rem;
+        left: 8%;
+        position: absolute;
+        top: 24.1rem;
+        z-index: 99999;
+
+        .swiper-slide {
+            cursor: pointer;
+            filter: grayscale(65%);
+            height: 4.8rem;
+            opacity: 0.4;
+            width: 4.8rem;
+
+            &-thumb-active {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+
     .main-slide {
         height: 73.6rem;
         width: 100%;
@@ -125,6 +148,14 @@
 
             #slide-hearthstone {
                 background-image: url("../imgs/banner-slide-02.jpg");
+            }
+
+            #slide-wow {
+                background-image: url("../imgs/banner-slide-03.jpg");
+
+                .left-content {
+                    max-width: 62.6rem;
+                }
             }
         }
     }
