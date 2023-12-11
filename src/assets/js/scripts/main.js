@@ -15,3 +15,14 @@ const slide_hero = new Swiper("#main-slide", {
         disableOnInteraction: false
     }
 });
+
+const navGames = document.getElementById("nav-games");
+navGames.addEventListener("click", event => {
+    const targetFilter = event.target.closest("a");
+    if (targetFilter && navGames.contains(targetFilter)) {
+        event.preventDefault();
+        const allFilters = document.querySelectorAll("#nav-games li a");
+        allFilters.forEach(item => item.classList.remove("active"));
+        targetFilter.classList.toggle("active");
+    }
+});
