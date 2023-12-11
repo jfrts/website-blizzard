@@ -160,3 +160,71 @@
         }
     }
 }
+
+.s-games {
+    .games-header {
+        display: flex;
+        justify-content: space-between;
+        margin: 7.8rem 0;
+
+        span {
+            color: #8F9199;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            max-width: 17.5rem;
+            width: 100%;
+        }
+
+        ul {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            max-width: 16rem;
+            width: 100%;
+        }
+
+        .all-games-button {
+            align-items: center;
+            color: $primary-default;
+            display: grid;
+            font-size: 1.6rem;
+            font-weight: 600;
+            grid-template-columns: 1rem 1fr;
+            gap: 1rem;
+            max-width: 14.6rem;
+            width: 100%;
+        }
+    }
+
+    .games-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 4.7rem 3.2rem;
+
+        .all-games-card {
+            align-items: center;
+            border: 0.15rem solid #212428;
+            border-radius: 0.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3.4rem;
+            justify-content: center;
+            max-height: 38.4rem;
+
+            img {
+                max-width: 8.677rem;
+            }
+
+            span {
+                display: flex;
+                font-weight: 600;
+                gap: 1.2rem;
+            }
+        }
+    }
+}
+
