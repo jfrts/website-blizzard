@@ -162,6 +162,8 @@
 }
 
 .s-games {
+    margin-bottom: 10.7rem;
+
     .games-header {
         display: flex;
         justify-content: space-between;
@@ -241,3 +243,219 @@
     }
 }
 
+.s-downloads {
+    background-image: url("../imgs/background-section-download.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 95rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+
+        .texts {
+            max-width: 30rem;
+            width: 100%;
+
+            .logo-battlenet {
+                margin-bottom: 3rem;
+            }
+
+            h3 {
+                font-size: 3.2rem;
+                font-weight: bold;
+                max-width: 23rem;
+                margin-bottom: 3rem;
+                width: 100%;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2.4rem;
+                margin-bottom: 4.2rem;
+
+                lI {
+                    align-items: center;
+                    color: #828792;
+                    display: flex;
+                    font-size: 1.8rem;
+                    gap: 1.6rem;
+                    line-height: 178%;
+                }
+            }
+        }
+
+        .images {
+            height: 59rem;
+            max-width: 100rem;
+            position: absolute;
+            top: 0;
+            right: -22.5rem;
+            width: 100%;
+
+            .first {
+                position: absolute;
+                left: 0;
+                top: 0;
+                animation: float 8000ms ease-in-out infinite;
+            }
+
+            .second {
+                position: absolute;
+                right: 8rem;
+                bottom: -2.4rem;
+                animation: float 6000ms ease-in-out infinite;
+            }
+        }
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.login-modal {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    left: 0;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: all 300ms ease;
+    width: 100%;
+    z-index: 999999;
+    
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+
+        .box {
+            transform: translateY(0);
+        }
+    }
+
+    .overlay {
+        background-color: hsla(0, 0%, 0%, 0.65);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+    }
+
+    .box {
+        align-items: center;
+        background: url("../imgs/bg-modal.png") no-repeat center center, #000;
+        display: flex;
+        flex-direction: column;
+        height: 60rem;
+        justify-content: center;
+        max-width: 69.6rem;
+        padding: 6.6rem;
+        position: relative;
+        text-align: center;
+        transform: translateY(5rem);
+        transition: transform 300ms;
+        width: 100%;
+        z-index: 1;
+
+        .close {
+            position: absolute;
+            right: 2.4rem;
+            top: 2.4rem;
+        }
+
+        .logo {
+            margin-bottom: 4rem;
+            width: 100%;
+            max-width: 16.6rem;
+        }
+
+        form {
+            margin-bottom: 3.2rem;
+            max-width: 42.6rem;
+            width: 100%;
+            
+            .form-group {
+                margin-bottom: 1.6rem;
+                max-width: 42.6rem;
+                width: 100%;
+
+                input {
+                    border-radius: 0.4rem;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    height: 4.8rem;
+                    line-height: 2.2rem;
+                    outline: none;
+                    padding: 0 1.6rem;
+                    width: 100%;
+                    
+                    &::placeholder {
+                        color: $neutral-700;
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                    }
+                }
+                
+                button {
+                    box-sizing: border-box;
+                    font-weight: 600;
+                    line-height: 5.2rem;
+                    justify-content: center;
+                    margin-top: 0.8rem;
+                    width: 100%;
+                }
+            }
+        }
+
+        .social-login {
+            .text-info {
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+
+            ul {
+                display: flex;
+                gap: 1.6rem;
+                justify-content: center;
+                margin: 1.6rem 0 3.5rem 0;
+
+                li {
+                    background: #FFF;
+                    display: flex;
+                    padding: 1.4rem;
+                    place-content: center;
+                }
+            }
+
+            .create-account-text {
+                margin-bottom: 1.6rem;
+            }
+
+            .modal-support-link {
+                color: $primary-default;
+                text-decoration: underline;
+            }
+        }
+    }
+}

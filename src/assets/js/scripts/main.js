@@ -26,3 +26,16 @@ navGames.addEventListener("click", event => {
         targetFilter.classList.toggle("active");
     }
 });
+{
+    const loginButton = document.getElementById("login-button");
+    const modalCloseButton = document.getElementById("modal-close-button");
+    const loginModal = document.getElementById("login-modal");
+
+    function toggleModal(event) {
+        event.preventDefault();
+        loginModal.classList.toggle("active");
+    }
+
+    loginButton.addEventListener("click", toggleModal);
+    modalCloseButton.addEventListener("click", toggleModal);
+}
