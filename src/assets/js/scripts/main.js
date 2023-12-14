@@ -39,3 +39,13 @@ navGames.addEventListener("click", event => {
     loginButton.addEventListener("click", toggleModal);
     modalCloseButton.addEventListener("click", toggleModal);
 }
+{
+    const navGamesDrop = document.getElementById("nav-games-drop");
+    const gamesMenu = document.getElementById("games-menu");
+    const header = document.querySelector("header");
+    
+    navGamesDrop.addEventListener("click", () => {
+        header.classList.toggle("menu-active");
+        gamesMenu.classList.toggle("active");
+    });
+}

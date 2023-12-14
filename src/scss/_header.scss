@@ -5,8 +5,14 @@ header {
     left: 0;
     position: absolute;
     top: 0;
+    transition: all 300ms;
     width: 100%;
     z-index: 999;
+
+    &.menu-active {
+        background-color: #090909eb;
+        backdrop-filter: blur(8px);
+    }
 
     .container {
         display: flex;
