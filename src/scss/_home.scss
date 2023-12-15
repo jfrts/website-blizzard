@@ -291,6 +291,13 @@
             justify-content: center;
             max-height: 38.4rem;
 
+            @include responsive("mobile") {
+                padding: 8.8rem 0;
+                max-width: 28rem;
+                width: 100%;
+                margin: 0 auto;
+            }
+
             img {
                 max-width: 8.677rem;
             }
