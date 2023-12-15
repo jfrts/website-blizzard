@@ -8,6 +8,13 @@
         top: 24.1rem;
         z-index: 99999;
 
+        @include responsive("tablet") {
+            bottom: 10.5rem;
+            height: 5.6rem;
+            left: 1.5rem;
+            top: initial;
+        }
+
         .swiper-slide {
             cursor: pointer;
             filter: grayscale(65%);
@@ -44,11 +51,24 @@
                         max-width: 56.2rem;
                         width: 100%;
 
+                        @include responsive("tablet") {
+                            margin-left: 0;
+                        }
+
                         h2 {
                             font-size: 6.4rem;
                             font-weight: 700;
                             line-height: 110.2%;
                             margin-bottom: 1.6rem;
+
+                            @include responsive("tablet") {
+                                font-size: 5.6rem;
+                            }
+
+                            @include responsive("mobile") {
+                                font-size: 4.4rem;
+                                text-wrap: wrap;
+                            }
                         }
 
                         p {
@@ -56,6 +76,11 @@
                             letter-spacing: -0.005rem;
                             line-height: 2.7rem;
                             margin-bottom: 3.2rem;
+
+                            @include responsive("mobile") {
+                                font-size: 1.6rem;
+                                text-wrap: wrap;
+                            }
                         }
 
                         .btn {
@@ -68,6 +93,10 @@
                         margin-top: -3.4rem;
                         max-width: 29.2rem;
                         width: 100%;
+
+                        @media (max-width: 780px) {
+                            display: none;
+                        }
 
                         .game-logo {
                             display: grid;
@@ -144,6 +173,10 @@
 
             #slide-diablo {
                 background-image: url("../imgs/banner-slide-01.jpg");
+
+                @include responsive("tablet") {
+                    background-position: 30%;
+                }
             }
 
             #slide-hearthstone {
@@ -169,16 +202,32 @@
         justify-content: space-between;
         margin: 7.8rem 0;
 
+        @include responsive("mobile") {
+            flex-direction: column;
+            gap: 2.4rem;
+            align-items: center;
+            text-align: center;
+        }
+
         span {
             color: #8F9199;
             font-size: 1.5rem;
             font-weight: 600;
             text-transform: uppercase;
+
+            @include responsive("mobile") {
+                display: none;
+            }
         }
 
         h2 {
             max-width: 17.5rem;
             width: 100%;
+
+            @include responsive("mobile") {
+                font-size: 3.6rem;
+                max-width: 100%;
+            }
         }
 
         ul {
@@ -220,6 +269,18 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 4.7rem 3.2rem;
 
+        @include responsive("tablet") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 750px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include responsive("mobile") {
+            grid-template-columns: 1fr;
+        }
+
         .all-games-card {
             align-items: center;
             border: 0.15rem solid #212428;
@@ -247,18 +308,36 @@
     background-image: url("../imgs/background-section-download.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 95rem;
+    background-size: cover;
+    height: 75rem;
     display: flex;
     align-items: center;
     overflow: hidden;
 
+    @include responsive("tablet") {
+        height: 60rem;
+    }
+
+    @media (max-width: 810px) {
+        height: auto;
+        padding: 9.6rem 0;
+    }
+
     .container {
         position: relative;
+
+        @media (max-width: 810px) {
+            display: flex;
+            flex-direction: column;
+        }
 
         .texts {
             max-width: 30rem;
             width: 100%;
+
+            @media (max-width: 810px) {
+                max-width: 100%;
+            }
 
             .logo-battlenet {
                 margin-bottom: 3rem;
@@ -293,9 +372,29 @@
             height: 59rem;
             max-width: 100rem;
             position: absolute;
-            top: 0;
+            top: -8rem;
             right: -22.5rem;
             width: 100%;
+
+            @media (max-width: 1100px) {
+                height: 55rem;
+                max-width: 80rem;
+            }
+
+            @include responsive("tablet") {
+                @media (max-width: 1100px) {
+                    transform: scale(0.75);
+                }
+            }
+
+            @media (max-width: 810px) {
+                position: initial;
+                max-width: 150%;
+                width: 150%;
+                display: block;
+                overflow: hidden;
+                display: none;
+            }
 
             .first {
                 position: absolute;
@@ -476,18 +575,26 @@ body {
     transition: all 300ms;
     width: 100%;
     z-index: 99999;
-    
+
+    @include responsive("tablet") {
+        display: none;
+    }
+
     &.active {
         opacity: 1;
         pointer-events: all;
         transform: translateY(0);
     }
-    
+
     .games {
         display: grid;
         gap: 2.8rem;
         grid-template-columns: repeat(6, 1fr);
         padding: 3.8rem 0rem 5.5rem 0rem;
+        
+        @include responsive("tablet") {
+            grid-template-columns: repeat(4, 1fr);
+        }
 
         li {
             align-items: center;
@@ -508,6 +615,7 @@ body {
         display: flex;
         justify-content: center;
         height: 7rem;
+        flex-wrap: wrap;
 
         ul {
             display: flex;

@@ -36,6 +36,10 @@
     max-width: 28rem;
     width: 100%;
     
+    @include responsive("mobile") {
+        margin: 0 auto;
+    }
+
     &:hover {
         .cover {
             img {
@@ -50,6 +54,14 @@
         overflow: hidden;
         width: 100%;
         margin-bottom: 2.4rem;
+        
+        @include responsive("tablet") {
+            height: 33rem;
+        }
+        
+        @media (min-width: 750px) and (max-width: 850px) {
+            height: 29rem;
+        }
 
         img {
             transition: all 400ms ease-in;

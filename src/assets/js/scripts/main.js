@@ -2,7 +2,15 @@ const slide_thumb = new Swiper("#thumb-slide", {
     slidesPerView: 5,
     direction: "vertical",
     spaceBetween: 20,
-    watchSlidesProgress: true
+    watchSlidesProgress: true,
+    breakpoints: {
+        320: {
+            direction: "horizontal"
+        },
+        991: {
+            direction: "vertical"
+        }
+    }
 });
 
 const slide_hero = new Swiper("#main-slide", {
